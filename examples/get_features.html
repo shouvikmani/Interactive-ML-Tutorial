@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Get Features Demo</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+        <div class="header clearfix">
+            <h3 class="text-muted">Get Features Demo</h3>
+        </div>
+
+        Feature 1:
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" value="red" onclick="setFeature1(this.value)">Red Mean</button>
+            <button type="button" class="btn btn-default" value="green" onclick="setFeature1(this.value)">Green Mean</button>
+            <button type="button" class="btn btn-default" value="blue" onclick="setFeature1(this.value)">Blue Mean</button>
+        </div>
+
+        <br><br>
+
+        Feature 2:
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" value="red" onclick="setFeature2(this.value)">Red Mean</button>
+            <button type="button" class="btn btn-default" value="green" onclick="setFeature2(this.value)">Green Mean</button>
+            <button type="button" class="btn btn-default" value="blue" onclick="setFeature2(this.value)">Blue Mean</button>
+        </div>
+
+
+
+    </div>
+
+  </body>
+</html>
+
+<script>
+    var feature1 = "green"
+    var feature2 = "red"
+    var url="http://interactive-ml-guide.herokuapp.com/get_features/"
+
+    function getFeatures(callback) {
+        var data = {
+            x1: feature1,
+            x2: feature2
+        }
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: data,
+          success: function (results) {
+              callback(results)
+          }
+        });
+    }
+
+    function setFeature1(newFeature1) {
+        feature1 = newFeature1;
+        getFeatures(rederFeaturesPlot);
+    }
+
+    function setFeature2(newFeature2) {
+        feature2 = newFeature2;
+        getFeatures(rederFeaturesPlot);
+    }
+
+    function rederFeaturesPlot(data) {
+        console.log(data);
+    }
+
+    getFeatures(rederFeaturesPlot);
+</script>
