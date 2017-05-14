@@ -1,0 +1,31 @@
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
+#feature1 {
+    float: left;
+    margin-right: 50px;
+}
+
+#feature2 {
+    float: left;
+    margin-right: 50px;
+}
+
+.chart {
+
+}
+
+.main text {
+font: 10px sans-serif;
+}
+
+.axis line, .axis path {
+shape-rendering: crispEdges;
+stroke: black;
+fill: none;
+}
+
+circle {
+fill: steelblue;
+}
