@@ -75,7 +75,7 @@
     var feature1 = "green"
     var feature2 = "blue"
     var view = "plot"
-    var labels = [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
+    var TrainLabels = [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
 
     function getFeatures(callback) {
         var data = {
@@ -108,7 +108,7 @@
         var featuresData = {
             feature1: data['x1_array'],
             feature2: data['x2_array'],
-            labels: labels
+            labels: TrainLabels
         }
         plotFeatures(featuresData, feature1, feature2);
         makeFeaturesTable(featuresData, feature1, feature2)
