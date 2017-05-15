@@ -150,28 +150,28 @@ html.w-mod-js *[data-ix="home"] {
 
 .operation.plot {
   padding-bottom: 18%;
-  background-color: #40385f;
+  background-color: #AAA;
 }
 
 .operation.train {
   padding-bottom: 34%;
-  background-color: #40385f;
+  background-color: #AAA;
 }
 
 .operation.imgdif {
   padding-bottom: 15%;
-  background-color: #40385f;
+  background-color: #AAA;
   text-align: right;
 }
 
 .operation.label {
   padding-bottom: 15%;
-  background-color: #40385f;
+  background-color: #AAA;
 }
 
 .operation.upload {
   padding-bottom: 22%;
-  background-color: #40385f;
+  background-color: #AAA;
 }
 
 .content {

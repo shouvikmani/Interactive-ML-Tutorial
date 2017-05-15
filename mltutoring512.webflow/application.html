@@ -62,6 +62,9 @@
             <div class="ofloatleft">
               <h2 class="oph1">Upload Your Data</h2>
               <p class="p2">Upload the pictures that you downloaded earlier here. Make sure you upload each matching pair of images one by one. (e.g. Each pair corresponds to the same exact area of Indonesia at different times.)</p>
+              <form method="post" enctype="multipart/form-data">
+                <button type="submit" class="button btn btn-default" value="Preloaded" onclick="setPreloaded()">Use Preloaded Images</button>
+              </form>
             </div>
           </div>
           <div class="operation-panel upload">
@@ -85,7 +88,7 @@
           <form method="post" enctype="multipart/form-data">
 
               <button type="submit" class="button btn btn-default" value="Upload" onclick="setUpload()">Upload Images</button>
-              <button type="submit" class="button btn btn-default" value="Preloaded" onclick="setPreloaded()">Use Preloaded Images</button>
+
           </form>
         </div>
         <div class="opdiv">
@@ -631,6 +634,30 @@
         </div>
         </div>
         <div class="opdiv">
+          <div class="operation-meta">
+            <div class="ofloatleft">
+              <h2 class="oph1">Train your model</h2>
+            </div>
+          </div>
+          <div class="operation-panel">
+<!-- here insert train model -->
+                <div class="header clearfix">
+                    <h3 class="text-muted">Train Model Demo</h3>
+                </div>
+
+
+
+                <button type="button" class="btn btn-default" value="Train" onclick="getFeatures(trainModel)">Train</button>
+
+                <br><br>
+
+                <div id='train-plot'>
+                  <!-- / D3 plot -->
+                </div>
+<!-- here insert train model -->
+          </div>
+        </div>
+        <div class="opdiv">
           <div class="operation-meta w-clearfix">
             <div class="ofloatleft">
               <h2 class="oph1">Test Model</h2>
@@ -701,30 +728,7 @@
             <h3 class="subheading">Overall Accuracy</h3><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="445">
           </div>
         </div>
-        <div class="opdiv">
-          <div class="operation-meta">
-            <div class="ofloatleft">
-              <h2 class="oph1">Train your model</h2>
-            </div>
-          </div>
-          <div class="operation-panel">
-<!-- here insert train model -->
-                <div class="header clearfix">
-                    <h3 class="text-muted">Train Model Demo</h3>
-                </div>
 
-
-
-                <button type="button" class="btn btn-default" value="Train" onclick="getFeatures(trainModel)">Train</button>
-
-                <br><br>
-
-                <div id='train-plot'>
-                  <!-- / D3 plot -->
-                </div>
-<!-- here insert train model -->
-          </div>
-        </div>
       </div>
     </div>
   </div>
