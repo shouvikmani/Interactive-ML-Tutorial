@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Get Features Demo</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+        <div class="header clearfix">
+            <h3 class="text-muted">Get Features Demo</h3>
+        </div>
+        <select name="image_number" onchange="setImage(this.value)">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+
+        <img src="{% static "" %}defor_images/before/{{image}}.jpg" alt="before">
+      	<img src="{% static "" %}defor_images/after/{{image}}.jpg" alt="after">
+        <img src="{% static "" %}defor_images/difference/{{image}}.jpg" alt="after">
+
+
+    </div>
+
+  </body>
+</html>
+
+<script>
+    var image_number = "1"
+    var url="http://127.0.0.1:8000/get_means_images/"
+
+    function getMeans(callback) {
+        var data = {
+            image_number: image_number,
+        }
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: data,
+          success: function (results) {
+              callback(results)
+          }
+        });
+    }
+
+    function setImage(newImage) {
+        image_number = newImage;
+        getMeans(rederFeaturesPlot);
+    }
+
+    function rederFeaturesPlot(data) {
+        console.log(data);
+    }
+</script>

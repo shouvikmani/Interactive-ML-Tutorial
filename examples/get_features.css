@@ -30,6 +30,12 @@ circle {
 fill: steelblue;
 }
 
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+}
+
 
 #table-container {
     width: 800px;
