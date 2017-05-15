@@ -44,3 +44,20 @@ fill: steelblue;
     margin-left: auto;
     margin-right: auto;
 }
+
+#deforestation-images {
+    text-align: center;*/
+    float: left;
+    width: 100%;
+}
+
+#non-deforestation-images {
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.image-pair > img {
+    width: 40%;
+    margin-right: 20px;
+}
