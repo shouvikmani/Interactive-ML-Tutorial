@@ -54,8 +54,14 @@
 
         <br><br><br>
 
-        <div class='plot'>
+        <div id='plot'>
           <!-- / D3 plot -->
+        </div>
+
+        <div id='table-container'>
+            <table id='table' class="table table-bordered table-hover">
+                <!-- Features table-->
+            </table>
         </div>
 
     </div>
@@ -89,28 +95,49 @@
     function setFeature1(newFeature1) {
         $(newFeature1).addClass('active').siblings().removeClass('active');
         feature1 = newFeature1.value;
-        getFeatures(rederFeaturesPlot);
+        getFeatures(rederFeaturesPlotAndTable);
     }
 
     function setFeature2(newFeature2) {
         $(newFeature2).addClass('active').siblings().removeClass('active');
         feature2 = newFeature2.value;
-        getFeatures(rederFeaturesPlot);
+        getFeatures(rederFeaturesPlotAndTable);
     }
 
-    function rederFeaturesPlot(data) {
+    function rederFeaturesPlotAndTable(data) {
         var featuresData = {
             feature1: data['x1_array'],
             feature2: data['x2_array'],
             labels: labels
         }
         plotFeatures(featuresData, feature1, feature2);
+        makeFeaturesTable(featuresData, feature1, feature2)
+    }
+
+    function makeFeaturesTable(featuresData, feature1, feature2) {
+        var tableHTML = '<tr><th>Image Number</th><th>' + feature1
+                        + ' mean</th><th>' + feature2 + ' mean</th><th>'
+                        + 'Label</th></tr>';
+
+        for (var i = 0; i < featuresData['labels'].length; i++) {
+            tableHTML += '<tr><td>' + (i+1) + '</td><td>' + featuresData['feature1'][i] + '</td><td>' + featuresData['feature2'][i] + '</td> + <td>' + featuresData['labels'][i] + '</td></tr>'
+        }
+
+        $('#table').append(tableHTML);
     }
 
     function setView(newView) {
         $(newView).addClass('active').siblings().removeClass('active');
         view = newView.value;
+        if (view == "plot") {
+            $('#table').hide()
+            $('#plot').show()
+        } else {
+            $('#table').show()
+            $('#plot').hide()
+        }
     }
 
-    getFeatures(rederFeaturesPlot);
+    getFeatures(rederFeaturesPlotAndTable);
+    $('#table').hide()
 </script>

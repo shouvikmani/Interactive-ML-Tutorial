@@ -27,7 +27,7 @@ function plotFeatures(featuresData, feature1, feature2) {
     // Remove existing charts
     d3.select("svg").remove();
 
-    var chart = d3.select('.plot')
+    var chart = d3.select('#plot')
 	.append('svg:svg')
 	.attr('width', width + margin.right + margin.left)
 	.attr('height', height + margin.top + margin.bottom)
