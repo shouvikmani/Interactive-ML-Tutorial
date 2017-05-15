@@ -123,21 +123,21 @@
             tableHTML += '<tr><td>' + (i+1) + '</td><td>' + featuresData['feature1'][i] + '</td><td>' + featuresData['feature2'][i] + '</td> + <td>' + featuresData['labels'][i] + '</td></tr>'
         }
 
-        $('#table').append(tableHTML);
+        $('#table').html(tableHTML);
     }
 
     function setView(newView) {
         $(newView).addClass('active').siblings().removeClass('active');
         view = newView.value;
         if (view == "plot") {
-            $('#table').hide()
+            $('#table-container').hide()
             $('#plot').show()
         } else {
-            $('#table').show()
+            $('#table-container').show()
             $('#plot').hide()
         }
     }
 
     getFeatures(rederFeaturesPlotAndTable);
-    $('#table').hide()
+    $('#table-container').hide()
 </script>
