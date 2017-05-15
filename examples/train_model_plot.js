@@ -128,18 +128,3 @@ function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2, decis
       .attr("d", line);
 
 }
-
-// function plotDecisionBoundary(decisionBoundary) {
-//     var max_x = 22
-//     var data = [[0, decisionBoundary['intercept']],[max_x, max_x*decisionBoundary['slope'] + decisionBoundary['intercept']]]
-//
-//     // var data = [[0, 50], [100, 80], [200, 40], [300, 60], [400, 30]];
-//
-//     console.log(data);
-//
-//     var lineGenerator = d3.line();
-//     var pathString = lineGenerator(data);
-//
-//     d3.select('path')
-//     	.attr('d', pathString);
-// }
