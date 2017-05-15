@@ -4,12 +4,12 @@
 
 #feature1 {
     float: left;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 #feature2 {
     float: left;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 .chart {
@@ -30,17 +30,17 @@ circle {
 fill: steelblue;
 }
 
-
-#table-container {
-    width: 100%;
-    height: auto;
-    overflow-y: scroll;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 0px;
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
 }
 
-.container {
-padding-left: 0px;
-margin-left: 0px;
+
+#table-container {
+    width: 800px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
 }

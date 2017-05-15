@@ -218,6 +218,8 @@ function plotFeatures(featuresData, feature1, feature2) {
 
 function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2, decisionBoundary) {
 
+  console.log(decisionBoundary);
+
     var data = [];
     for (var i = 0; i < featuresData['labels'].length; i++) {
         data.push({
