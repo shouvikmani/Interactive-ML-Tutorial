@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Train Model Demo</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
+
+    <link rel="stylesheet" href="get_features.css">
+
+
+  </head>
+
+  <body>
+
+    <div>
+        <!-- <div class="header clearfix">
+            <h3 class="text-muted">Train Model Demo</h3>
+        </div> -->
+
+        <br>
+
+        <button type="button" class="btn btn-default" value="Train" onclick="getFeatures(trainModel)">Train</button>
+
+        <br><br>
+
+        <div id='plot'>
+          <!-- / D3 plot -->
+        </div>
+
+    </div>
+
+  </body>
+</html>
+
+<script type="text/javascript" src="train_model_plot.js"></script>
+<script>
+    var feature1 = "green"
+    var feature2 = "red"
+    var TrainLabels = [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
+    var url="http://interactive-ml-guide.herokuapp.com/get_features/"
+    var url_train="http://interactive-ml-guide.herokuapp.com/train_svm/"
+
+    function getFeatures(callback) {
+        var data = {
+            x1: feature1,
+            x2: feature2
+        }
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: data,
+          success: function (results) {
+              callback(results)
+          }
+        });
+    }
+
+    function trainModel(x_arrays){
+      var x1_array = x_arrays['x1_array']
+      var x2_array = x_arrays['x2_array']
+      var data_train = {
+          x1_array: x1_array,
+          x2_array: x2_array,
+          y_train: TrainLabels,
+      }
+      $.ajax({
+        type: "POST",
+        url: url_train,
+        data: data_train,
+        success: function (results) {
+            renderFeaturesPlotAndDecisionBoundary(results, x_arrays)
+        }
+      });
+    }
+
+    function renderFeaturesPlotAndDecisionBoundary(classifierData, featuresData) {
+        var featuresData = {
+            feature1: featuresData['x1_array'],
+            feature2: featuresData['x2_array'],
+            labels: TrainLabels
+        }
+        var decisionBoundary = {
+            slope: classifierData['m'],
+            intercept: classifierData['b']
+        }
+        console.log(decisionBoundary);
+        plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2, decisionBoundary);
+    }
+</script>

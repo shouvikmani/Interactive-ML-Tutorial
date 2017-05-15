@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html data-wf-page="59165f2fbdb4300afa87c601" data-wf-site="59165f2fbdb4300afa87c602">
+<head>
+  <meta charset="utf-8">
+  <title>MLtutoring5.12</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/mltutoring512.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+      }
+    });
+  </script>
+  <script src="js/modernizr.js" type="text/javascript"></script>
+  <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
+</head>
+<body>
+  <div class="section1">
+    <div class="navbar w-nav" data-animation="default" data-collapse="medium" data-duration="400">
+      <div class="w-container">
+        <a class="brand w-nav-brand" href="#"><img class="image" src="images/logo1.png" width="34">
+          <p class="pageh1">ImageClass</p>
+        </a>
+        <nav class="w-nav-menu" role="navigation"><a class="homenavllink w-nav-link" href="Home.html">Home</a><a class="homenavllink w-nav-link" href="Tutorial.html">Tutorial</a><a class="homenavllink w-nav-link" href="Application.html">Build a Classifier</a><a class="homenavllink w-nav-link" href="about-us.html">About Us</a>
+        </nav>
+        <!-- <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+    <div class="dldata">
+      <div class="container-7 w-container">
+        <h3 class="h4">Which do you think can detect image difference best: <br>you or a machine?</h3>
+        <p class="p3" width="224">Imagine what could happen if computers could detect and predict when, where, and how fast deforestation was happening. Consider the possibilities if people were constantly watching and guessing at when, where, and how fast deforestation was happening. Think about what could happen if a computer could do the same thing and immediately send alerts to policy makers, journalists, politicians, and more.&nbsp;
+          <br>
+          <br> This is possible through Machine Learning. Machine Learning is how computers can learn how to categorize and name things without having to have been programmed what those things are in advance.
+          <br> In our example, the question is: can a computer use machine learning and pictures of different areas in Indonesia to be able to tell if deforestation is happening in those areas?&nbsp;
+          <br>
+          <br> Let’s use a tutorial to learn how to use Machine Learning to answer this question. Before the tutorial, you will need to download the dataset we will be using.</p><a class="button w-button" href="#">Download</a>
+      </div>
+    </div>
+  </div>
+  <div class="section-3">
+    <div class="w-container">
+      <h1 class="homeh1" data-ix="banneranimation">Let’s learn <strong>how</strong> to do Machine Learning!</h1>
+    </div>
+  </div>
+  <div class="section-2">
+    <div class="ypdiv">
+      <div class="row-5 w-row">
+        <div class="tutoring w-col w-col-6">
+          <div class="content">
+            <div class="ttdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft">
+                  <h2 class="oph1">Step 1: Labeling Data</h2>
+                  <p class="p3">In order for the machine to understand and the class value in your dataset, you will need to label them manually. The video below demonstrates how to do this.
+                    <br>
+                    <br>Because computers only understand numbers, we must label our picture data with numbers. For this tutorial, 0 can represent no deforestation, and 1 can represent deforestation.</p>
+                </div>
+              </div>
+              <div class="ttpanel"><img src="gif/Label_v3.gif">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="label operation w-col w-col-6">
+          <div class="content">
+            <div class="opdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft">
+                  <h2 class="oph1">Labeling Data</h2>
+                  <p class="p3">Please label the example data below according to the text we provided that specifies the class values for each pair of images.</p>
+                </div>
+              </div>
+              <div class="operation-panel w-clearfix">
+                <div class="lbrow w-row">
+                  <div class="lbcol w-col w-col-3"><img class="labelimg" src="images/1.jpg"><img class="labelimg" src="images/1_1.jpg">
+                    <div class="w-form">
+                      <form data-name="Email Form" id="email-form" name="email-form">
+                        <div class="w-checkbox">
+                          <input class="w-checkbox-input" data-name="Checkbox 7" id="checkbox-7" name="checkbox-7" type="checkbox">
+                          <label class="w-form-label" for="checkbox-7"></label>
+                        </div>
+                      </form>
+                      <div class="w-form-done">
+                        <div>Thank you! Your submission has been received!</div>
+                      </div>
+                      <div class="w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lbcol w-col w-col-3"><img class="labelimg" src="images/2.jpg"><img class="labelimg" src="images/2_1.jpg">
+                    <div class="w-form">
+                      <form data-name="Email Form" id="email-form" name="email-form">
+                        <div class="w-checkbox">
+                          <input class="w-checkbox-input" data-name="Checkbox 8" id="checkbox-8" name="checkbox-8" type="checkbox">
+                          <label class="w-form-label" for="checkbox-8"></label>
+                        </div>
+                      </form>
+                      <div class="w-form-done">
+                        <div>Thank you! Your submission has been received!</div>
+                      </div>
+                      <div class="w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lbcol w-col w-col-3"><img class="labelimg" src="images/3.jpg"><img class="labelimg" src="images/3_1.jpg">
+                    <div class="w-form">
+                      <form data-name="Email Form" id="email-form" name="email-form">
+                        <div class="w-checkbox">
+                          <input class="w-checkbox-input" data-name="Checkbox 9" id="checkbox-9" name="checkbox-9" type="checkbox">
+                          <label class="w-form-label" for="checkbox-9"></label>
+                        </div>
+                      </form>
+                      <div class="w-form-done">
+                        <div>Thank you! Your submission has been received!</div>
+                      </div>
+                      <div class="w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lbcol w-col w-col-3"><img class="labelimg" src="images/4_1.jpg"><img class="labelimg" src="images/4.jpg">
+                    <div class="w-form">
+                      <form data-name="Email Form" id="email-form" name="email-form">
+                        <div class="w-checkbox">
+                          <input class="w-checkbox-input" data-name="Checkbox 10" id="checkbox-10" name="checkbox-10" type="checkbox">
+                          <label class="w-form-label" for="checkbox-10"></label>
+                        </div>
+                      </form>
+                      <div class="w-form-done">
+                        <div>Thank you! Your submission has been received!</div>
+                      </div>
+                      <div class="w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form</div>
+                      </div>
+                    </div>
+                  </div>
+                </div><a class="button w-button" href="#">Next</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ypdiv">
+      <div class="row-6 w-row">
+        <div class="tutoring w-col w-col-6">
+          <div class="content">
+            <div class="ttdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft">
+                  <h2 class="oph1">Step 2: Calculate Differences Between Before and After Image Pairs.</h2>
+                  <p class="p3">The way we can tell if deforestation has occurred is by examining the difference in the “before” 2000 pictures and their corresponding “after” 2015 pictures in the picture pairs. For our tutorial, let’s use the difference in white color between the before and after pictures as our feature. Perhaps more white indicates less trees and plants. Therefore, for each matching pair, we will subtract the 2015 white value from our RGB conversion from the 2000 white value. By looking at the difference, we are looking at change over time. Don’t worry about how we got the white value from the RGB value. That is a more advanced concept that we will skip for today.&nbsp;
+                    <br>
+                    <br> To do this, select which image pair you want to work with on the right hand side. We will demonstrate below using an example.</p>
+                </div>
+              </div>
+              <div class="ttpanel"><img src="gif/Pixels_V2.gif">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="imgdif operation w-col w-col-6">
+          <div class="content">
+            <div class="opdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft">
+                  <h2 class="oph1">Image Difference</h2>
+                  <p class="p3">Please select a pair of images to look the difference.</p>
+                </div>
+                <div class="operation-panel">
+                  <div class="w-tabs" data-duration-in="300" data-duration-out="100">
+                    <div class="tabs-menu-2 w-tab-menu">
+                      <a class="converttab w--current w-inline-block w-tab-link" data-w-tab="Tab 1">
+                        <div>Pair 1</div>
+                      </a>
+                      <a class="converttab w-inline-block w-tab-link" data-w-tab="Tab 2">
+                        <div>Pair 2</div>
+                      </a>
+                    </div>
+                    <div class="w-tab-content">
+                      <div class="w--tab-active w-tab-pane" data-w-tab="Tab 1">
+                        <div class="operation-panel">
+                          <div class="row w-row">
+                            <div class="left thresholdcol w-col w-col-5">
+                              <p class="paragraph sls">Before</p><img class="slimg" src="images/Snip20170506_11.png" width="228">
+                              <p class="paragraph-2">Red Mean: 50
+                                <br>Green Mean: 100
+                                <br>Blue Mean: 20</p>
+                              <p class="paragraph sls">After</p><img class="slimg" src="images/Snip20170506_9.png" width="227">
+                              <p class="paragraph-2">Red Mean: 20
+                                <br>Green Mean: 10
+                                <br>Blue Mean: 0</p>
+                            </div>
+                            <div class="column-2 w-col w-col-2"><img class="slimg" src="images/arrow-5.1.png" width="104">
+                            </div>
+                            <div class="column-10 w-clearfix w-col w-col-5"><img class="slimg" src="images/Snip20170506_12.png" width="228">
+                              <p class="paragraph-2">Red Mean: 20
+                                <br>Green Mean: 10
+                                <br>Blue Mean: 0</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w-tab-pane" data-w-tab="Tab 2">
+                        <div class="operation-panel">
+                          <div class="row w-row">
+                            <div class="left thresholdcol w-col w-col-5">
+                              <p class="paragraph sls">Before</p><img class="slimg" src="images/Snip20170506_11.png" width="228">
+                              <p class="paragraph-2">Red Mean: 50
+                                <br>Green Mean: 100
+                                <br>Blue Mean: 20</p>
+                              <p class="paragraph sls">After</p><img class="slimg" src="images/Snip20170506_9.png" width="227">
+                              <p class="paragraph-2">Red Mean: 20
+                                <br>Green Mean: 10
+                                <br>Blue Mean: 0</p>
+                            </div>
+                            <div class="column-2 w-col w-col-2"><img class="slimg" src="images/arrow-5.1.png" width="104">
+                            </div>
+                            <div class="column-10 w-clearfix w-col w-col-5"><img class="slimg" src="images/Snip20170506_12.png" width="228">
+                              <p class="paragraph-2">Red Mean: 20
+                                <br>Green Mean: 10
+                                <br>Blue Mean: 0</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ypdiv">
+      <div class="row-8 w-row">
+        <div class="tutoring w-col w-col-6">
+          <div class="content">
+            <div class="ttdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft">
+                  <h2 class="oph1">Step 3: Select Useful features</h2>
+                  <p class="p3">(Needs to change)Take a look at the plot that resulted from picking your threshold. All the dots in green belong to class 1, which is the class that matches deforestation. All the dots in blue belong to class 0, which is the class that matches no deforestation. The best case scenario as we look at the plot would be if there was perfect separation between the blue dots and the green dots. This would mean that our computer did a perfect job at separating our two different classes. What do you think of the plot below? If you are unhappy with the separation, then you can go back to the threshold slider and try other threshold values until you are satisfied.</p>
+                </div>
+              </div>
+              <div class="ttpanel"><img src="gif/FeatureEva_v2.gif" width="100%">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="operation plot w-col w-col-6">
+          <div class="content">
+            <div class="opdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft w-clearfix">
+                  <h2 class="oph1">Feature Selection</h2>
+                </div>
+                <div class="operation-panel">
+                  <iframe src="FeatureSelection/get_features_tutorial.html" height="800;" width="100%;" style="border:none;"></iframe>
+                  <div class="div-block-6">
+                    <div class="row-10 w-row">
+                      <div class="plotcol w-col w-col-1">
+                        <div class="navbar1 w-nav" data-animation="default" data-collapse="medium" data-duration="400">
+                          <div class="container w-container">
+                            <div class="w-nav-button">
+                              <div class="w-icon-nav-menu"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="plotcol w-col w-col-4">
+                        <p class="p2">Feature 1(X axis)</p>
+                        <div class="navbar-2 w-nav" data-animation="default" data-collapse="all" data-duration="400">
+                          <div class="container w-container">
+                            <nav class="feature w-nav-menu" role="navigation"><a class="featurelink w-nav-link" href="#">Red</a><a class="featurelink w-nav-link" href="#">Blue</a><a class="featurelink w-nav-link" href="#">Green</a>
+                            </nav>
+                            <div class="w-nav-button">
+                              <div class="w-icon-nav-menu"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="plotcol w-col w-col-4">
+                        <div class="navbar3 w-nav" data-animation="default" data-collapse="medium" data-duration="400">
+                          <div class="w-container">
+                            <div class="w-nav-button">
+                              <div class="w-icon-nav-menu"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="p2">Feature 2 (Y axis)</p>
+                        <div class="navbar-2 w-nav" data-animation="default" data-collapse="all" data-duration="400">
+                          <div class="container w-container">
+                            <nav class="feature w-nav-menu" role="navigation"><a class="featurelink w-nav-link" href="#">Red</a><a class="featurelink w-nav-link" href="#">Blue</a><a class="featurelink w-nav-link" href="#">Green</a>
+                            </nav>
+                            <div class="w-nav-button">
+                              <div class="w-icon-nav-menu"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column-13 w-col w-col-3"><a class="refresh w-button" href="#">Refresh</a>
+                      </div> -->
+                    </div>
+                    <!-- <div class="div-block-5">
+                      <div class="w-tabs" data-duration-in="300" data-duration-out="100">
+                        <div class="tabs-menu w-tab-menu">
+                          <a class="converttab w--current w-inline-block w-tab-link" data-w-tab="Tab 1">
+                            <div>Plot</div>
+                          </a>
+                          <a class="converttab w-inline-block w-tab-link" data-w-tab="Tab 2">
+                            <div>Table</div>
+                          </a>
+                        </div>
+                        <div class="w-tab-content">
+                          <div class="w--tab-active w-tab-pane" data-w-tab="Tab 1"><img class="image-3" sizes="(max-width: 479px) 100vw, (max-width: 767px) 74vw, 36vw" src="images/Snip20170506_14.png" srcset="images/Snip20170506_14-p-500.png 500w, images/Snip20170506_14.png 604w" width="458">
+                          </div>
+                          <div class="w-tab-pane" data-w-tab="Tab 2"><img class="image-3" src="images/Snip20170506_15.png" width="629">
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ypdiv">
+      <div class="row-9 w-row">
+        <div class="tutoring w-col w-col-6">
+          <div class="content">
+            <div class="ttdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft">
+                  <h2 class="oph1">Step 4: Test Your Model</h2>
+                  <p class="p3">After you have a good enough threshold, we can move on the train the model and test it.&nbsp; Creating the model and test on the testing set.</p>
+                </div>
+              </div>
+              <div class="ttpanel"><img src="gif/Testing.gif" width="100%">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="operation train w-col w-col-6">
+          <div class="content">
+            <div class="opdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft w-clearfix">
+                  <h2 class="oph1">Test Your Model</h2>
+                </div>
+              </div>
+              <div class="operation-panel w-clearfix"><a class="button w-button" href="#">Test model</a><img class="slimg" sizes="(max-width: 479px) 75vw, (max-width: 767px) 78vw, 38vw" src="images/Pasted-image-at-2017_05_13-01_38-PM.png" srcset="images/Pasted-image-at-2017_05_13-01_38-PM.png 500w, images/Pasted-image-at-2017_05_13-01_38-PM.png 580w" width="506">
+              </div>
+              <div class="classification operation-panel">
+                <h3 class="subheading">Classification Results</h3>
+                <div class="w-row">
+                  <div class="column-14 w-col w-col-6">
+                    <h4 class="subheading">Deforestation</h4>
+                    <ol class="w-list-unstyled">
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="column-15 w-col w-col-6">
+                    <h4 class="subheading">Non-deforestation</h4>
+                    <ol class="w-list-unstyled">
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                      <li class="list-item"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="96">
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <div class="accuracy classification operation-panel">
+                <h3 class="subheading">Overall Accuracy</h3><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="445">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ypdiv">
+      <div class="row-8 w-row">
+        <div class="tutoring w-col w-col-6">
+          <div class="content">
+            <div class="ttdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft">
+                  <h2 class="oph1">Step 5: Train Your Model</h2>
+                  <p class="p3">After you have a good enough threshold, we can move on the train the model and test it.&nbsp; Creating the model and test on the testing set.</p>
+                </div>
+              </div>
+              <div class="ttpanel"><img src="gif/Training.gif" width="100%">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="operation plot w-col w-col-6">
+          <div class="content">
+            <div class="opdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft w-clearfix">
+                  <h2 class="oph1">Train Your Model</h2>
+                </div>
+              </div>
+              <div class="operation-panel w-clearfix"><a class="button w-button" href="#">Train model</a><img class="slimg" sizes="(max-width: 479px) 75vw, (max-width: 767px) 78vw, 38vw" src="images/Pasted-image-at-2017_05_13-01_38-PM.png" srcset="images/Pasted-image-at-2017_05_13-01_38-PM.png 500w, images/Pasted-image-at-2017_05_13-01_38-PM.png 580w" width="506">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ypdiv">
+      <div class="container-5 w-container">
+        <h3 class="h4">Step 6: Save Your Classifier (needs discussion)</h3>
+        <p class="p3" width="224">(Description of how to save the classifier and use it later)</p><a class="button w-button" href="#">Save your Classifier</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
+
+  <link rel="stylesheet" href="get_features.css">
+
+</head>
+
+  <body>
+
+    <div class="container">
+        <div class="header clearfix">
+            <h3 class="text-muted">Select Useful Features</h3>
+        </div>
+
+        <br>
+
+        <div class="btn-group" id="feature1" role="group">
+            <b>Feature 1</b>
+            <br>
+            <button type="button" class="btn btn-default" value="red" onclick="setFeature1(this)">Red Mean</button>
+            <button type="button" class="btn btn-default active" value="green" onclick="setFeature1(this)">Green Mean</button>
+            <button type="button" class="btn btn-default" value="blue" onclick="setFeature1(this)">Blue Mean</button>
+        </div>
+
+        <div class="btn-group" id="feature2" role="group" aria-label="...">
+            <b>Feature 2</b>
+            <br>
+            <button type="button" class="btn btn-default" value="red" onclick="setFeature2(this)">Red Mean</button>
+            <button type="button" class="btn btn-default" value="green" onclick="setFeature2(this)">Green Mean</button>
+            <button type="button" class="btn btn-default active" value="blue" onclick="setFeature2(this)">Blue Mean</button>
+        </div>
+
+        <div class="btn-group" id="view" role="group" aria-label="...">
+            <b>View as</b>
+            <br>
+            <button type="button" class="btn btn-default active" value="plot" onclick="setView(this)">Plot</button>
+            <button type="button" class="btn btn-default" value="table" onclick="setView(this)">Table</button>
+        </div>
+
+        <br><br><br><br><br><br>
+        <br><br><br>
+
+
+        <div id='plot'>
+          <!-- / D3 plot -->
+        </div>
+
+        <div id='table-container'>
+            <table id='table' class="table table-bordered table-hover">
+                <!-- Features table-->
+            </table>
+        </div>
+        <script type="text/javascript" src="integrated_tutorial.js"></script>
+  </body>
+</html>

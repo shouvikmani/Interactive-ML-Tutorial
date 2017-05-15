@@ -1,0 +1,46 @@
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
+#feature1 {
+    float: left;
+    margin-right: 20px;
+}
+
+#feature2 {
+    float: left;
+    margin-right: 20px;
+}
+
+.chart {
+
+}
+
+.main text {
+font: 10px sans-serif;
+}
+
+.axis line, .axis path {
+shape-rendering: crispEdges;
+stroke: black;
+fill: none;
+}
+
+circle {
+fill: steelblue;
+}
+
+
+#table-container {
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+}
+
+.container {
+padding-left: 0px;
+margin-left: 0px;
+}

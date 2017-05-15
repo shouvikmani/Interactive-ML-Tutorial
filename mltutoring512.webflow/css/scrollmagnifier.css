@@ -1,0 +1,13 @@
+.lbcol > img {
+  display: block;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
+}
+
+
+.lbcol > img:hover {
+  transform: scale(2,2);
+  transition: .3s transform;
+  z-index: 1;
+}
