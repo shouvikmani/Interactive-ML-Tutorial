@@ -5,9 +5,24 @@
   <title>MLtutoring5.12</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
+
+  <link rel="stylesheet" href="FeatureSelection/get_features.css">
+
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/mltutoring512.webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/scrollmagnifier.css" rel="stylesheet" type="text/css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script type="text/javascript">
     WebFont.load({
@@ -38,13 +53,18 @@
 
     <div class="dldata">
       <div class="container-7 w-container">
-        <h3 class="h4">Which do you think can detect image difference best: <br>you or a machine?</h3>
-        <p class="p3" width="224">Imagine what could happen if computers could detect and predict when, where, and how fast deforestation was happening. Consider the possibilities if people were constantly watching and guessing at when, where, and how fast deforestation was happening. Think about what could happen if a computer could do the same thing and immediately send alerts to policy makers, journalists, politicians, and more.&nbsp;
+        <h3 class="h4">Which do you think can detect image difference best: you or a computer?</h3>
+        <p class="p3" width="224">Say you were a environmentalist trying to detect deforestation using historical satellite imagery. Imagine what could happen if computers could detect and predict when, where, and how fast deforestation was happening. This is possible through Machine Learning. Machine Learning is how computers can learn rules and patterns from data to make predictions about new data.&nbsp;
           <br>
-          <br> This is possible through Machine Learning. Machine Learning is how computers can learn how to categorize and name things without having to have been programmed what those things are in advance.
-          <br> In our example, the question is: can a computer use machine learning and pictures of different areas in Indonesia to be able to tell if deforestation is happening in those areas?&nbsp;
-          <br>
-          <br> Let’s use a tutorial to learn how to use Machine Learning to answer this question. Before the tutorial, you will need to download the dataset we will be using.</p><a class="button w-button" href="#">Download</a>
+          <br> Can a computer use machine learning to be able to tell if deforestation is happening in different areas in Indonesia? Let’s use a tutorial to learn how to use Machine Learning to answer this question.
+          <br><br>
+          <h3 class="h4">How does Machine Learning work?</h3>
+          <p class="p3" width="224">Machine learning uses labeled examples to learn the best rules for separating data into classes (in this case deforestation and non-deforestation). Two major stages in Machine Learning are training and testing. In the training stage, we will train our computer using a subset of our picture dataset that we have already labeled. This will produce a model, which will make predictions on new examples. In the testing stage, we will see how well the model performs when it has to make predictions on unseen data.&nbsp;
+            <br>
+            <br> As we work through our deforestation example, we will evaluate whether or not the computer can classify our images as well as we can. This is important because we want to ensure that the computer is making accurate predictions compared to ones made by a human.
+
+            <br><br>
+            <a class="button w-button" href="#">Download</a>
       </div>
     </div>
   </div>
@@ -62,9 +82,9 @@
               <div class="operation-meta">
                 <div class="ofloatleft">
                   <h2 class="oph1">Step 1: Labeling Data</h2>
-                  <p class="p3">In order for the machine to understand and the class value in your dataset, you will need to label them manually. The video below demonstrates how to do this.
+                  <p class="p3">First, we need to label our data with categories. Check the boxes on the right where you see evidence of deforestation. Of these labeled images, we will use 15 to train the machine learning model. We will save the remaining 10 images to test the model later.
                     <br>
-                    <br>Because computers only understand numbers, we must label our picture data with numbers. For this tutorial, 0 can represent no deforestation, and 1 can represent deforestation.</p>
+                    <br>25 labeled images is a very small sample size for training a model. However, it will work to illustrate the concepts in our tutorial.</p>
                 </div>
               </div>
               <div class="ttpanel"><img src="gif/Label_v3.gif">
@@ -254,7 +274,8 @@
               <div class="operation-meta">
                 <div class="ofloatleft">
                   <h2 class="oph1">Step 3: Select Useful features</h2>
-                  <p class="p3">(Needs to change)Take a look at the plot that resulted from picking your threshold. All the dots in green belong to class 1, which is the class that matches deforestation. All the dots in blue belong to class 0, which is the class that matches no deforestation. The best case scenario as we look at the plot would be if there was perfect separation between the blue dots and the green dots. This would mean that our computer did a perfect job at separating our two different classes. What do you think of the plot below? If you are unhappy with the separation, then you can go back to the threshold slider and try other threshold values until you are satisfied.</p>
+                  <p class="p3">Computers view pictures as numbers, which are represented as RGB values. RGB values are numbers for red ( R ), green (G), and blue (B) values that tell a computer which color to display. Therefore, we first need to convert our pictures into RGB values.
+<br><br>The way we can tell if deforestation has occurred is by examining the difference in the “before” 2000 pictures and their corresponding “after” 2015 pictures in the picture pairs. For our tutorial, one way we can do this is by seeing if there are differences in the red, green, or blue coloration (RGB values). </p>
                 </div>
               </div>
               <div class="ttpanel"><img src="gif/FeatureEva_v2.gif" width="100%">
@@ -270,7 +291,40 @@
                   <h2 class="oph1">Feature Selection</h2>
                 </div>
                 <div class="operation-panel">
-                  <iframe src="FeatureSelection/get_features_tutorial.html" height="800;" width="100%;" style="border:none;"></iframe>
+                              <div class="btn-group" id="feature1" role="group">
+                                  <b>Feature 1</b>
+                                  <br>
+                                  <button type="button" class="btn btn-default active" value="red" onclick="setFeature1(this)">Red Mean</button>
+                                  <button type="button" class="btn btn-default" value="green" onclick="setFeature1(this)">Green Mean</button>
+                                  <button type="button" class="btn btn-default" value="blue" onclick="setFeature1(this)">Blue Mean</button>
+                              </div>
+
+                              <div class="btn-group" id="feature2" role="group" aria-label="...">
+                                  <b>Feature 2</b>
+                                  <br>
+                                  <button type="button" class="btn btn-default" value="red" onclick="setFeature2(this)">Red Mean</button>
+                                  <button type="button" class="btn btn-default" value="green" onclick="setFeature2(this)">Green Mean</button>
+                                  <button type="button" class="btn btn-default active" value="blue" onclick="setFeature2(this)">Blue Mean</button>
+                              </div>
+
+                                <div class="btn-group" id="view" role="group" aria-label="...">
+                                    <b>View as</b>
+                                    <br>
+                                    <button type="button" class="btn btn-default active" value="plot" onclick="setView(this)">Plot</button>
+                                    <button type="button" class="btn btn-default" value="table" onclick="setView(this)">Table</button>
+                                </div>
+
+                                <br><br><br>
+
+                                <div id='plot'>
+                                  <!-- / D3 plot -->
+                                </div>
+
+                                <div id='table-container'>
+                                    <table id='table' class="table table-bordered table-hover">
+                                        <!-- Features table-->
+                                    </table>
+                                </div>
                   <div class="div-block-6">
                     <div class="row-10 w-row">
                       <div class="plotcol w-col w-col-1">
@@ -342,6 +396,45 @@
         </div>
       </div>
     </div>
+
+    <div class="ypdiv">
+      <div class="row-8 w-row">
+        <div class="tutoring w-col w-col-6">
+          <div class="content">
+            <div class="ttdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft">
+                  <h2 class="oph1">Step 4: Train Your Model</h2>
+                  <p class="p3">After you have a good enough threshold, we can move on the train the model and test it.&nbsp; Creating the model and test on the testing set.</p>
+                </div>
+              </div>
+              <div class="ttpanel"><img src="gif/Training.gif" width="100%">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="operation plot w-col w-col-6">
+          <div class="content">
+            <div class="opdiv">
+              <div class="operation-meta">
+                <div class="ofloatleft w-clearfix">
+                  <h2 class="oph1">Train Your Model</h2>
+                </div>
+              </div>
+              <!-- <div class="operation-panel w-clearfix"><a class="button w-button" href="#">Train model</a><img class="slimg" sizes="(max-width: 479px) 75vw, (max-width: 767px) 78vw, 38vw" src="images/Pasted-image-at-2017_05_13-01_38-PM.png" srcset="images/Pasted-image-at-2017_05_13-01_38-PM.png 500w, images/Pasted-image-at-2017_05_13-01_38-PM.png 580w" width="506">
+              </div> -->
+              <button type="button" class="btn btn-default" value="Train" onclick="getFeatures(trainModel)">Train</button>
+
+              <br><br>
+
+              <div id='train-plot'>
+                <!-- / D3 plot -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="ypdiv">
       <div class="row-9 w-row">
         <div class="tutoring w-col w-col-6">
@@ -349,7 +442,7 @@
             <div class="ttdiv">
               <div class="operation-meta">
                 <div class="ofloatleft">
-                  <h2 class="oph1">Step 4: Test Your Model</h2>
+                  <h2 class="oph1">Step 5: Test Your Model</h2>
                   <p class="p3">After you have a good enough threshold, we can move on the train the model and test it.&nbsp; Creating the model and test on the testing set.</p>
                 </div>
               </div>
@@ -366,9 +459,24 @@
                   <h2 class="oph1">Test Your Model</h2>
                 </div>
               </div>
-              <div class="operation-panel w-clearfix"><a class="button w-button" href="#">Test model</a><img class="slimg" sizes="(max-width: 479px) 75vw, (max-width: 767px) 78vw, 38vw" src="images/Pasted-image-at-2017_05_13-01_38-PM.png" srcset="images/Pasted-image-at-2017_05_13-01_38-PM.png 500w, images/Pasted-image-at-2017_05_13-01_38-PM.png 580w" width="506">
-              </div>
-              <div class="classification operation-panel">
+              <!--  -->
+                      <div class="operation-panel">
+
+                      <div class="header clearfix">
+                          <!-- <h3 class="text-muted"></h3> -->
+                      </div>
+
+
+                      <button type="button" class="btn btn-default" value="Test" onclick="getFeatures(testModel)">Test</button>
+
+                      <br><br>
+
+                      <div id='test-plot'>
+                        <!-- / D3 plot -->
+                      </div>
+                      </div>
+              <!--  -->
+              <!-- <div class="classification operation-panel">
                 <h3 class="subheading">Classification Results</h3>
                 <div class="w-row">
                   <div class="column-14 w-col w-col-6">
@@ -426,41 +534,10 @@
                     </ol>
                   </div>
                 </div>
-              </div>
-              <div class="accuracy classification operation-panel">
+              </div> -->
+              <!-- <div class="accuracy classification operation-panel">
                 <h3 class="subheading">Overall Accuracy</h3><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="445">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="ypdiv">
-      <div class="row-8 w-row">
-        <div class="tutoring w-col w-col-6">
-          <div class="content">
-            <div class="ttdiv">
-              <div class="operation-meta">
-                <div class="ofloatleft">
-                  <h2 class="oph1">Step 5: Train Your Model</h2>
-                  <p class="p3">After you have a good enough threshold, we can move on the train the model and test it.&nbsp; Creating the model and test on the testing set.</p>
-                </div>
-              </div>
-              <div class="ttpanel"><img src="gif/Training.gif" width="100%">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="operation plot w-col w-col-6">
-          <div class="content">
-            <div class="opdiv">
-              <div class="operation-meta">
-                <div class="ofloatleft w-clearfix">
-                  <h2 class="oph1">Train Your Model</h2>
-                </div>
-              </div>
-              <div class="operation-panel w-clearfix"><a class="button w-button" href="#">Train model</a><img class="slimg" sizes="(max-width: 479px) 75vw, (max-width: 767px) 78vw, 38vw" src="images/Pasted-image-at-2017_05_13-01_38-PM.png" srcset="images/Pasted-image-at-2017_05_13-01_38-PM.png 500w, images/Pasted-image-at-2017_05_13-01_38-PM.png 580w" width="506">
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -475,6 +552,8 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
+  <script src="FeatureSelection/integrated_tutorial.js" type="text/javascript"></script>
+
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>

@@ -641,9 +641,9 @@
           </div>
           <div class="operation-panel">
 <!-- here insert train model -->
-                <div class="header clearfix">
+                <!-- <div class="header clearfix">
                     <h3 class="text-muted">Train Model Demo</h3>
-                </div>
+                </div> -->
 
 
 
@@ -663,9 +663,24 @@
               <h2 class="oph1">Test Model</h2>
             </div>
           </div>
-          <div class="operation-panel"><a class="button w-button" href="#">Test model</a><img class="slimg" sizes="(max-width: 479px) 79vw, (max-width: 991px) 82vw, 83vw" src="images/Pasted-image-at-2017_05_13-01_38-PM.png" srcset="images/Pasted-image-at-2017_05_13-01_38-PM.png 500w, images/Pasted-image-at-2017_05_13-01_38-PM.png 580w" width="899">
+          <!--here insert test model  -->
+          <div class="operation-panel">
+
+          <div class="header clearfix">
+              <!-- <h3 class="text-muted"></h3> -->
           </div>
-          <div class="classification operation-panel">
+
+
+          <button type="button" class="btn btn-default" value="Test" onclick="getFeatures(testModel)">Test</button>
+
+          <br><br>
+
+          <div id='test-plot'>
+            <!-- / D3 plot -->
+          </div>
+        </div>
+          <!--here insert test model  -->
+          <!-- <div class="classification operation-panel">
             <h3 class="subheading">Classification Results</h3>
             <div class="w-row">
               <div class="column-14 w-col w-col-6">
@@ -723,10 +738,10 @@
                 </ol>
               </div>
             </div>
-          </div>
-          <div class="appclassification operation-panel">
+          </div> -->
+          <!-- <div class="appclassification operation-panel">
             <h3 class="subheading">Overall Accuracy</h3><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="445">
-          </div>
+          </div> -->
         </div>
 
       </div>

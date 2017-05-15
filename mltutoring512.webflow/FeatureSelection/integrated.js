@@ -1,9 +1,10 @@
 var url="http://interactive-ml-guide.herokuapp.com/get_features/"
 var url_train="http://interactive-ml-guide.herokuapp.com/train_svm/"
-var feature1 = "green"
+var feature1 = "red"
 var feature2 = "blue"
 var view = "plot"
 var TrainLabels = [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
+var TestLabels = [0,1,0,1,0,1,0,1,0,1]
 
 function getFeatures(callback) {
     var data = {
@@ -79,12 +80,12 @@ function trainModel(x_arrays){
     url: url_train,
     data: data_train,
     success: function (results) {
-        renderFeaturesPlotAndDecisionBoundary(results, x_arrays)
+        renderFeaturesPlotAndDecisionBoundaryTrain(results, x_arrays);
     }
   });
 }
 
-function renderFeaturesPlotAndDecisionBoundary(classifierData, featuresData) {
+function renderFeaturesPlotAndDecisionBoundaryTrain(classifierData, featuresData) {
     var featuresData = {
         feature1: featuresData['x1_array'],
         feature2: featuresData['x2_array'],
@@ -94,8 +95,44 @@ function renderFeaturesPlotAndDecisionBoundary(classifierData, featuresData) {
         slope: classifierData['m'],
         intercept: classifierData['b']
     }
-    plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2, decisionBoundary);
+    var plotElement = "#train-plot"
+    plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2,
+        decisionBoundary, plotElement);
 }
+
+function testModel(x_arrays){
+  var x1_array = x_arrays['x1_array']
+  var x2_array = x_arrays['x2_array']
+  var data_train = {
+      x1_array: x1_array,
+      x2_array: x2_array,
+      y_train: TrainLabels,
+  }
+  $.ajax({
+    type: "POST",
+    url: url_train,
+    data: data_train,
+    success: function (results) {
+        renderFeaturesPlotAndDecisionBoundaryTest(results, x_arrays);
+    }
+  });
+}
+
+function renderFeaturesPlotAndDecisionBoundaryTest(classifierData, featuresData) {
+    var featuresData = {
+        feature1: featuresData['x1_array'].slice(15),
+        feature2: featuresData['x2_array'].slice(15),
+        labels: TestLabels
+    }
+    var decisionBoundary = {
+        slope: classifierData['m'],
+        intercept: classifierData['b']
+    }
+    var plotElement = "#test-plot"
+    plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2,
+        decisionBoundary, plotElement);
+}
+
 
 getFeatures(renderFeaturesPlotAndTable);
 $('#table-container').hide()
@@ -216,9 +253,8 @@ function plotFeatures(featuresData, feature1, feature2) {
 
 }
 
-function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2, decisionBoundary) {
-
-  console.log(decisionBoundary);
+function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2,
+    decisionBoundary, plotElement) {
 
     var data = [];
     for (var i = 0; i < featuresData['labels'].length; i++) {
@@ -245,9 +281,9 @@ function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2, decis
     	      .range([ height, 0 ]);
 
     // Remove existing charts
-    d3.select("#train-plot").html("");
+    d3.select(plotElement).html("");
 
-    var chart = d3.select('#train-plot')
+    var chart = d3.select(plotElement)
 	.append('svg:svg')
 	.attr('width', width + margin.right + margin.left)
 	.attr('height', height + margin.top + margin.bottom)
@@ -339,8 +375,6 @@ function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2, decis
     var line = d3.line()
         .x(function (d) { return x(d[0]); })
         .y(function (d) { return y(d[1]); });
-
-    console.log(points)
 
     main.append("path")
       .data([points])
