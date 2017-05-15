@@ -231,7 +231,7 @@ function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2, decis
 
 
     var margin = {top: 20, right: 15, bottom: 60, left: 60}
-      , width = 960 - margin.left - margin.right
+      , width = 800 - margin.left - margin.right
       , height = 500 - margin.top - margin.bottom;
 
     var x = d3.scaleLinear()
