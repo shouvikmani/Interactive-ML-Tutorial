@@ -67,13 +67,26 @@
           <div class="operation-panel upload">
             <div class="row-11 w-row">
               <div class="ulcol w-col w-col-6">
-                <h3 class="oph1">First Pair of Images</h3><a class="button w-button" href="#">Upload</a>
+                <h3 class="oph1">First Pair of Images</h3>
+                <!-- <a class="button w-button" href="#">Upload</a> -->
+                <form method="post" enctype="multipart/form-data">
+                    <input type="file" name="before_files" multiple/>
+                </form>
               </div>
               <div class="right ulcol w-col w-col-6">
-                <h3 class="oph1">Second Pair of Images</h3><a class="button w-button" href="#">Upload</a>
+                <h3 class="oph1">Second Pair of Images</h3>
+                <!-- <a class="button w-button" href="#">Upload</a> -->
+                <form method="post" enctype="multipart/form-data">
+                    <input type="file" name="after_files" multiple/>
+                </form>
               </div>
             </div>
           </div>
+          <form method="post" enctype="multipart/form-data">
+
+              <button type="submit" class="button btn btn-default" value="Upload" onclick="setUpload()">Upload Images</button>
+              <button type="submit" class="button btn btn-default" value="Preloaded" onclick="setPreloaded()">Use Preloaded Images</button>
+          </form>
         </div>
         <div class="opdiv">
           <div class="operation-meta">
