@@ -13,7 +13,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v2.js"></script>
 
     <link rel="stylesheet" href="get_features.css">
 
@@ -80,6 +80,19 @@
 
         <div class="header clearfix">
             <h3 class="text-muted">Test Model Demo</h3>
+        </div>
+
+
+        <button type="button" class="btn btn-default" value="Test" onclick="getFeatures(testModel)">Test</button>
+
+        <br><br>
+
+        <div id='test-plot'>
+          <!-- / D3 plot -->
+        </div>
+
+        <div class="header clearfix">
+            <h3 class="text-muted">Classification Result</h3>
         </div>
 
 

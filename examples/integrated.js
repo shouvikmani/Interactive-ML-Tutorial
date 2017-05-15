@@ -153,12 +153,12 @@ function plotFeatures(featuresData, feature1, feature2) {
       , width = 960 - margin.left - margin.right
       , height = 500 - margin.top - margin.bottom;
 
-    var x = d3.scaleLinear()
+    var x = d3.scale.linear()
               .domain([ d3.min(data, function(d) { return d['feature2']; }) - 2,
                         d3.max(data, function(d) { return d['feature2']; }) + 2])
               .range([ 0, width ]);
 
-    var y = d3.scaleLinear()
+    var y = d3.scale.linear()
     	      .domain([ d3.min(data, function(d) { return d['feature1']; }) - 2,
                         d3.max(data, function(d) { return d['feature1']; }) + 2])
     	      .range([ height, 0 ]);
@@ -186,8 +186,9 @@ function plotFeatures(featuresData, feature1, feature2) {
         .text("Mean Pixel Values of Differenced Images");
 
     // draw the x axis
-    var xAxis = d3.axisBottom()
-	.scale(x);
+    var xAxis = d3.svg.axis()
+	.scale(x)
+	.orient('bottom');
 
     main.append('g')
 	.attr('transform', 'translate(0,' + height + ')')
@@ -202,8 +203,9 @@ function plotFeatures(featuresData, feature1, feature2) {
       .style("font-size","14px");
 
     // draw the y axis
-    var yAxis = d3.axisLeft()
-	.scale(y);
+    var yAxis = d3.svg.axis()
+  	.scale(y)
+  	.orient('left');
 
     main.append('g')
 	.attr('transform', 'translate(0,0)')
@@ -270,12 +272,12 @@ function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2,
       , width = 960 - margin.left - margin.right
       , height = 500 - margin.top - margin.bottom;
 
-    var x = d3.scaleLinear()
+    var x = d3.scale.linear()
               .domain([ d3.min(data, function(d) { return d['feature2']; }) - 2,
                         d3.max(data, function(d) { return d['feature2']; }) + 2])
               .range([ 0, width ]);
 
-    var y = d3.scaleLinear()
+    var y = d3.scale.linear()
     	      .domain([ d3.min(data, function(d) { return d['feature1']; }) - 2,
                         d3.max(data, function(d) { return d['feature1']; }) + 2])
     	      .range([ height, 0 ]);
@@ -303,8 +305,9 @@ function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2,
         .text("SVM Model Decision Boundary");
 
     // draw the x axis
-    var xAxis = d3.axisBottom()
-	.scale(x);
+    var xAxis = d3.svg.axis()
+	.scale(x)
+	.orient('bottom');
 
     main.append('g')
 	.attr('transform', 'translate(0,' + height + ')')
@@ -319,8 +322,9 @@ function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2,
       .style("font-size","14px");
 
     // draw the y axis
-    var yAxis = d3.axisLeft()
-	.scale(y);
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient('left');
 
     main.append('g')
 	.attr('transform', 'translate(0,0)')
@@ -372,7 +376,7 @@ function plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2,
     var max_x = d3.max(data, function(d) { return d['feature2']; }) + 2
     var points = [[min_x, min_x*decisionBoundary['slope'] - decisionBoundary['intercept']],
                   [max_x, max_x*decisionBoundary['slope'] - decisionBoundary['intercept']]]
-    var line = d3.line()
+    var line = d3.svg.line()
         .x(function (d) { return x(d[0]); })
         .y(function (d) { return y(d[1]); });
 
