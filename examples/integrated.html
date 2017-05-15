@@ -15,7 +15,7 @@
 
     <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
 
-    <link rel="stylesheet" href="FeatureSelection/get_features.css">
+    <link rel="stylesheet" href="get_features.css">
 
   </head>
 
@@ -31,8 +31,8 @@
         <div class="btn-group" id="feature1" role="group">
             <b>Feature 1</b>
             <br>
-            <button type="button" class="btn btn-default" value="red" onclick="setFeature1(this)">Red Mean</button>
-            <button type="button" class="btn btn-default active" value="green" onclick="setFeature1(this)">Green Mean</button>
+            <button type="button" class="btn btn-default active" value="red" onclick="setFeature1(this)">Red Mean</button>
+            <button type="button" class="btn btn-default" value="green" onclick="setFeature1(this)">Green Mean</button>
             <button type="button" class="btn btn-default" value="blue" onclick="setFeature1(this)">Blue Mean</button>
         </div>
 
@@ -75,6 +75,19 @@
         <br><br>
 
         <div id='train-plot'>
+          <!-- / D3 plot -->
+        </div>
+
+        <div class="header clearfix">
+            <h3 class="text-muted">Test Model Demo</h3>
+        </div>
+
+
+        <button type="button" class="btn btn-default" value="Test" onclick="getFeatures(testModel)">Test</button>
+
+        <br><br>
+
+        <div id='test-plot'>
           <!-- / D3 plot -->
         </div>
 
