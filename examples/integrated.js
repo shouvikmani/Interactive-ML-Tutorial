@@ -114,6 +114,7 @@ function testModel(x_arrays){
     data: data_train,
     success: function (results) {
         renderFeaturesPlotAndDecisionBoundaryTest(results, x_arrays);
+        showClassifiedImages(results)
     }
   });
 }
@@ -131,6 +132,31 @@ function renderFeaturesPlotAndDecisionBoundaryTest(classifierData, featuresData)
     var plotElement = "#test-plot"
     plotFeaturesAndDecisionBoundary(featuresData, feature1, feature2,
         decisionBoundary, plotElement);
+}
+
+function showClassifiedImages(results) {
+    var offset = 15
+    for (var i = 0; i < results['test_labels'].length; i++) {
+        var imageNumber = offset + i;
+        var beforeImageSrc = "../data/before/" + imageNumber + ".jpg"
+        var afterImageSrc = "../data/after/" + imageNumber + ".jpg"
+        var pred = results['test_labels'][i]
+        if (pred == 0) {
+            $("#deforestation-images").append(
+                '<div class="image-pair">' +
+                "<img src=" + beforeImageSrc + ">" +
+                "<img src=" + afterImageSrc + ">" +
+                '<div><br>'
+            );
+        } else {
+            $("#non-deforestation-images").append(
+                '<div class="image-pair">' +
+                "<img src=" + beforeImageSrc + ">" +
+                "<img src=" + afterImageSrc + ">" +
+                '<div><br>'
+            );
+        }
+    }
 }
 
 
